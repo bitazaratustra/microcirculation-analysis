@@ -1,0 +1,35 @@
+# Jupyter & entorno interactivo
+jupyterlab
+ipykernel
+ipywidgets
+
+# Procesamiento de imágenes y videos
+opencv-python
+Pillow
+imageio
+scikit-image
+ffmpeg-python
+
+# NumPy, Pandas, Matplotlib
+numpy
+pandas
+matplotlib
+seaborn
+tqdm
+
+# Deep Learning
+torch
+torchvision
+segmentation-models-pytorch
+albumentations
+einops
+
+# ML general
+scikit-learn
+scipy
+
+# Reportes y outputs
+tabulate
+
+# Análisis de secuencias y visualización
+tensorboard

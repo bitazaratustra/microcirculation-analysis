@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.Python
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+
+# Archivos de configuración temporales
+*.bak
+*.tmp
+*.DS_Store
+Thumbs.db
+
+# Modelos y outputs
+models/
+outputs/
+checkpoints/
+*.pth
+*.pt
+
+# Datos
+data/raw/
+data/processed/
+data/annotations/
+
+# Archivos exportados
+*.csv
+*.tsv
+*.xlsx
+*.pdf
+*.tex
+
+# Imágenes y videos
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.png
+
