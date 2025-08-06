@@ -10,15 +10,24 @@ Se busca reemplazar o mejorar herramientas existentes (como AVA 3.2), mediante u
 
 ## 📁 Estructura del Proyecto
 
-microcirculation-analysis/
+microcirculation-analysis/ 
+
 ├── data/ # Datos (no versionados por git)
+
 ├── notebooks/ # Notebooks Jupyter por etapas
+
 ├── src/ # Código fuente (segmentación, métricas, modelos)
+
 ├── scripts/ # Entrenamiento desde línea de comandos
+
 ├── tests/ # Tests unitarios
+
 ├── configs/ # Configuraciones YAML
+
 ├── requirements.txt # Dependencias
+
 ├── README.md # Este archivo
+
 ├── .gitignore # Exclusiones de git
 
 
@@ -29,12 +38,9 @@ microcirculation-analysis/
 1. Crear y activar un entorno virtual con `pyenv` o `venv`
 2. Instalar dependencias:
 
-```bash
+```
 pip install -r requirements.txt
-🚀 Ejecución rápida
-bash
-Copy
-Edit
+
 # Entrenar modelo de segmentación
 python scripts/train_segmenter.py
 
@@ -43,3 +49,4 @@ python scripts/evaluate.py
 
 # Extraer métricas fisiológicas
 python scripts/extract_metrics.py
+```
