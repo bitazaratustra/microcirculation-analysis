@@ -138,7 +138,7 @@ density = calculate_vessel_density(mask_frame)
 
 ## 📝 Licencia
 
-MIT License - Citar proyecto en tesis
+A definir
 
 ---
 
