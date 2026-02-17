@@ -1,35 +1,89 @@
-# Jupyter & entorno interactivo
-jupyterlab
-ipykernel
-ipywidgets
+################################################################################
+# PROYECTO: Análisis Automatizado de Dinámicas Microvasculares Sublinguales
+# TIPO: Tesis Doctoral - Ingeniería Biomédica
+# DESCRIPCIÓN: Pipeline completo de análisis de microcirculación desde video
+################################################################################
 
-# Procesamiento de imágenes y videos
-opencv-python
-Pillow
-imageio
-scikit-image
-ffmpeg-python
+# ============================================================================
+# DEPENDENCIAS FUNDAMENTALES - COMPUTACIÓN NUMÉRICA
+# ============================================================================
 
-# NumPy, Pandas, Matplotlib
-numpy
-pandas
-matplotlib
-seaborn
-tqdm
+numpy>=1.23.0              # Computación numérica, álgebra lineal, arrays multidimensionales
+pandas>=1.5.0              # Análisis de datos tabulares, DataFrames, series temporales
+scipy>=1.9.0               # Funciones científicas (interpolación, estadística, optimización)
 
-# Deep Learning
-torch
-torchvision
-segmentation-models-pytorch
-albumentations
-einops
+# ============================================================================
+# DEPENDENCIAS PRINCIPALES - PROCESAMIENTO DE IMAGEN Y VIDEO
+# ============================================================================
 
-# ML general
-scikit-learn
-scipy
+opencv-python>=4.8.0       # OpenCV: detección de características, segmentación, estabilización video
+scikit-image>=0.20.0       # Skimage: esqueletonización, morfología, transformadas
+Pillow>=9.5.0              # PIL: carga/guardado de imágenes, transformaciones básicas
+imageio>=2.22.0            # Lectura/escritura de múltiples formatos de imagen y video
+imageio-ffmpeg>=0.4.8      # Codec FFMPEG para manejo de videos
 
-# Reportes y outputs
-tabulate
+# ============================================================================
+# DEPENDENCIAS PRINCIPALES - VISUALIZACIÓN Y GRÁFICOS
+# ============================================================================
 
-# Análisis de secuencias y visualización
-tensorboard
+matplotlib>=3.7.0          # Gráficos estáticos, curvas, heatmaps (publicación científica)
+seaborn>=0.12.0            # Visualización estadística avanzada sobre matplotlib
+plotly>=5.14.0             # Gráficos interactivos, dashboards (exploración de datos)
+
+# ============================================================================
+# DEPENDENCIAS PRINCIPALES - MACHINE LEARNING Y ESTADÍSTICA
+# ============================================================================
+
+scikit-learn>=1.2.0        # ML: clustering, clasificación, validación cruzada, preprocessing
+statsmodels>=0.14.0        # Modelos estadísticos, pruebas de hipótesis, regresiones
+# torch>=2.0.0             # PyTorch (descomenta si necesitas deep learning)
+# torchvision>=0.15.0      # Visión por computadora con redes neuronales (opcional)
+# segmentation-models-pytorch>=0.3.0  # Modelos segmentación preentrenados (opcional)
+
+# ============================================================================
+# DEPENDENCIAS - AMBIENTE JUPYTER Y NOTEBOOKS INTERACTIVOS
+# ============================================================================
+
+jupyter>=1.0.0             # Ambiente Jupyter completo
+jupyterlab>=4.0.0          # JupyterLab (interfaz mejorada para notebooks)
+ipykernel>=6.20.0          # Kernel IPython para Jupyter
+ipywidgets>=8.0.0          # Widgets interactivos en notebooks
+ipython>=8.10.0            # Shell IPython avanzado
+
+# ============================================================================
+# DEPENDENCIAS - UTILIDADES Y HERRAMIENTAS
+# ============================================================================
+
+tqdm>=4.65.0               # Barras de progreso visual para loops largos
+tabulate>=0.9.0            # Formateo de tablas para console/reportes
+python-dotenv>=1.0.0       # Manejo de variables de entorno (.env)
+
+# ============================================================================
+# DEPENDENCIAS OPCIONALES - VISUALIZACIÓN AVANZADA
+# ============================================================================
+
+# seaborn-venn>=0.1.0      # Diagramas de Venn para análisis comparativos
+# openpyxl>=3.10.0         # Exportación a Excel con formato
+# pptx>=0.6.21             # Creación de presentaciones PowerPoint programáticamente
+
+# ============================================================================
+# NOTAS DE INSTALACIÓN
+# ============================================================================
+# 
+# INSTALACIÓN COMPLETA:
+#   pip install -r requirements.txt
+#
+# CREAR ENTORNO VIRTUAL (Linux/macOS):
+#   python3 -m venv venv
+#   source venv/bin/activate
+#   pip install -r requirements.txt
+#
+# CREAR ENTORNO VIRTUAL (Windows):
+#   python -m venv venv
+#   venv\Scripts\activate
+#   pip install -r requirements.txt
+#
+# VERIFICAR INSTALACIÓN:
+#   python -c "import cv2, pandas, numpy; print('✓ Dependencias OK')"
+#
+# ============================================================================
