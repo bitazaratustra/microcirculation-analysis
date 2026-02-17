@@ -1,6 +1,5 @@
 # Análisis Automatizado de Dinámicas Microvasculares Sublinguales
 
-**Proyecto de Tesis Doctoral** | Ingeniería Biomédica | 2024-2025
 
 ---
 
