@@ -1,6 +1,6 @@
 # Documentación Completa del Pipeline de Análisis de Microcirculación
 
-**Proyecto de Tesis Doctoral:** Análisis Automatizado de Dinámicas Microvasculares Sublinguales  
+**Proyecto de Tesis :** Análisis Automatizado de Dinámicas Microvasculares Sublinguales  
 **Versión:** 1.0.0  
 **Última actualización:** Febrero 2025  
 **Estado:** Listo para fase de validación con datos reales
@@ -14,9 +14,7 @@ Este proyecto implementa un **pipeline completo de análisis de microcirculació
 - ✅ Segmenta automáticamente vasos sanguíneos
 - ✅ Valida contra anotaciones manuales  
 - ✅ Extrae características espacio-temporales
-- ✅ Realiza modelado de dinámicas vasculares
-- ✅ Clasifica pacientes según indicadores clínicos
-- ✅ Genera reportes para tesis doctoral
+- ✅ Genera reportes para tesis
 
 ---
 
@@ -51,7 +49,6 @@ SALIDA: Reportes, Gráficos, CSV de Métricas
 ## 📊 Descripción de Cada Notebook
 
 ### Notebook 01: Exploración de Datos
-**Estado:** ✅ Proporcionado por usuario  
 **Objetivo:** Inspección inicial de estructura de datos  
 **Entradas:** Video en formato original  
 **Salidas:** Historamas, metadatos de video  
@@ -59,7 +56,6 @@ SALIDA: Reportes, Gráficos, CSV de Métricas
 ---
 
 ### Notebook 02: Pre-procesamiento y Estabilización
-**Estado:** ✅ Proporcionado por usuario  
 **Objetivo:** Preparar frames para análisis  
 **Entradas:** Video bruto  
 **Procesamiento:**
@@ -71,7 +67,6 @@ SALIDA: Reportes, Gráficos, CSV de Métricas
 ---
 
 ### **Notebook 03: Anotación y Visualización**
-**Estado:** ✅ COMPLETADO CON ANOTACIONES EXHAUSTIVAS  
 **Objetivo:** Cargar y validar anotaciones manuales de microcirculación  
 
 #### Entradas:
@@ -79,7 +74,7 @@ SALIDA: Reportes, Gráficos, CSV de Métricas
 - Conteos de vasos por categoría de flujo (0-3)
 - Velocidades individuales de 20 vasos
 
-#### Etapas (Totalmente Documentadas):
+#### Etapas:
 1. **Tarea 1:** Carga de CSV
    - Importación con pandas
    - Inspección de estructura
@@ -144,14 +139,13 @@ src/data/
 
 ---
 
-### **Notebook 04: Segmentación de Vasos**
-**Estado:** ✅ COMPLETADO CON ANOTACIONES EXHAUSTIVAS  
+### **Notebook 04: Segmentación de Vasos** 
 **Objetivo:** Implementar y comparar métodos de segmentación automática
 
 #### Entradas:
 - Frames estabilizados (notebook 02)
 
-#### Métodos Implementados (Todos documentados):
+#### Métodos Implementados:
 
 | Método | Técnica | Parámetros | Uso |
 |--------|---------|-----------|-----|
@@ -160,7 +154,7 @@ src/data/
 | **CLAHE** | Realce adaptativo + Otsu | clipLimit=2.0 | Contraste mejorado |
 | **Híbrido** | CLAHE + Adaptativo | block=15, C=3 | ✅ **ELEGIDO** |
 
-#### Etapas (Totalmente Documentadas):
+#### Etapas:
 
 1. **Tarea 1:** Carga de Frames
    - Cargar desde notebook 02
@@ -184,13 +178,11 @@ src/data/
    - edge_pixels (regularidad)
    - Selección de mejor método
 
-5. **Tarea 5:** Características Esqueletales
-   - Esqueletonización
+5. **Tarea 5:** Características 
    - Detección de puntos de ramificación
-   - Cálculo de endpoints
-   - Longitud y área de vasos
+   - Cálculo de longitud y área de vasos
 
-6. **Tarea 6:** Aplicación a Todos los Frames
+6. **Tarea 6:** Aplicación a todos los Frames
    - Procesamiento batch
    - Guardado de máscaras binarias
    - Validación de salida
@@ -212,11 +204,10 @@ src/data/
 
 ---
 
-### **Notebook 05: Análisis del Video Segmentado**
-**Estado:** ✅ COMPLETADO CON ANOTACIONES EXHAUSTIVAS  
+### **Notebook 05: Análisis del Video Segmentado** 
 **Objetivo:** Validar segmentación automática contra anotaciones manuales
 
-#### Etapas (Totalmente Documentadas):
+#### Etapas:
 
 1. **Tarea 1:** Carga y Procesamiento
    - Cargar anotaciones procesadas (notebook 03)
@@ -239,16 +230,15 @@ src/data/
 ---
 
 ### **Notebook 06: Extracción de Características Espacio-Temporales**
-**Estado:** 🔄 COMPLETADO - Anotaciones Pendientes  
 **Objetivo:** Extraer características dinámicas de flujo vascular
 
-#### Características Extraídas (Documentadas):
+#### Características Extraídas:
 - **SVD temporal:** Evolución de densidad pequeños vasos
 - **TVD temporal:** Evolución de densidad total
 - **Velocidad promedio:** Media móvil de velocidad del flujo
 - **Variabilidad:** Desv. estándar de parámetros
 - **Proporciones:** Cambios en categorías de flujo
-- **Diagramas espacio-tiempo:** Líneas de escansión temporal
+- **Diagramas espacio-tiempo:** Líneas de evolución temporal
 
 #### Metodología:
 - Análisis frame-a-frame
@@ -258,8 +248,7 @@ src/data/
 
 ---
 
-### **Notebook 07: Modelado de Dinámicas Microvasculares**
-**Estado:** 🔄 COMPLETADO - Anotaciones Pendientes  
+### **Notebook 07: Modelado de Dinámicas Microvasculares** 
 **Objetivo:** Modelar cambios temporales en perfusión
 
 #### Modelos Implementados:
@@ -276,7 +265,6 @@ src/data/
 ---
 
 ### **Notebook 08: Métricas Clínicas y Estratificación**
-**Estado:** 🔄 COMPLETADO - Anotaciones Pendientes  
 **Objetivo:** Comparación clínica entre pacientes
 
 #### Indicadores Calculados:
@@ -293,8 +281,7 @@ src/data/
 ---
 
 ### **Notebook 09: Resumen de Resultados para Tesis**
-**Estado:** 🔄 COMPLETADO - Anotaciones Pendientes  
-**Objetivo:** Síntesis de hallazgos para presentación doctoral
+**Objetivo:** Síntesis de hallazgos
 
 #### Contenido:
 - Resumen de metodología
@@ -309,20 +296,20 @@ src/data/
 
 ```
 microcirculation-analysis/
-├── README.md                          ← ✅ ACTUALIZADO (español, argentino)
-├── requirements.txt                   ← ✅ ACTUALIZADO (anotado)
-├── PIPELINE_DOCUMENTATION.md          ← ✅ ESTE ARCHIVO
+├── README.md                          
+├── requirements.txt                  
+├── PIPELINE_DOCUMENTATION.md         
 │
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb      ← ✅ Proporcionado
-│   ├── 02_data_preprocessing.ipynb    ← ✅ Proporcionado  
-│   ├── 03_annotation_and_visualization.ipynb → ✅ ANOTADO [8 TAREAS]
-│   ├── 04_vessel_segmentation_training.ipynb  → ✅ ANOTADO [6 TAREAS]
-│   ├── 05_segmented_video_analysis.ipynb      → ✅ ANOTADO [2 TAREAS]
-│   ├── 06_feature_extraction_space_time.ipynb → 🔄 COMPLETADO
-│   ├── 07_microvascular_dynamics_modeling.ipynb → 🔄 COMPLETADO
-│   ├── 08_clinical_metrics_and_comparison.ipynb → 🔄 COMPLETADO
-│   └── 09_results_summary_for_thesis.ipynb    → 🔄 COMPLETADO
+│   ├── 01_data_exploration.ipynb    
+│   ├── 02_data_preprocessing.ipynb    
+│   ├── 03_annotation_and_visualization.ipynb 
+│   ├── 04_vessel_segmentation_training.ipynb  
+│   ├── 05_segmented_video_analysis.ipynb       
+│   ├── 06_feature_extraction_space_time.ipynb 
+│   ├── 07_microvascular_dynamics_modeling.ipynb 
+│   ├── 08_clinical_metrics_and_comparison.ipynb 
+│   └── 09_results_summary_for_thesis.ipynb    
 │
 ├── src/
 │   ├── features/
@@ -438,60 +425,3 @@ jupyter lab
 - 🔄 Notebooks 06-09: Anotaciones en progreso
   (Funcionalidad: 100% | Documentación: ~60%)
 
----
-
-## 🎯 Próximos Pasos
-
-### Fase 1: Validación (Ahora)
-1. ✅ Descargar datos reales del paciente
-2. ✅ Ejecutar notebook 02 para estabilización
-3. ✅ Ejecutar notebook 03 para anotaciones
-4. ✅ Ejecutar notebook 04 para segmentación
-5. ✅ Validar resultados contra anotaciones (notebook 05)
-
-### Fase 2: Refinamiento (Próximo)
-- Ajustar parámetros de segmentación si es necesario
-- Re-entrenar si se obtienen datos de entrenamiento
-- Completar anotaciones de notebooks 06-09
-
-### Fase 3: Presentación (Final)
-- Generar gráficos publication-ready
-- Escribir resultados en tesis
-- Crear presentación en defensa
-
----
-
-## 📝 Notas Importantes
-
-### Consideraciones Clínicas:
-- **SVD/TVD reducida:** Indicador de mal pronóstico
-- **Heterogeneidad alta:** Riesgo de disfunción multiorgánica
-- **Falta de respuesta a día 3:** Mortalidad elevada
-
-### Limitaciones del Método:
-- Requiere frames de buena calidad (no saturados/oscuros)
-- Sensible a movimiento de paciente
-- Puede fallar en videos con mucho artefacto
-
-### Recomendaciones:
-- Siempre inspeccionar visualmente muestras
-- Comparar automático-manual regularmente
-- Documentar cualquier anomalía
-- Mantener dataset de validación
-
----
-
-## 📞 Soporte
-
-Para preguntas sobre metodología, ver:
-- README.md (descripción general)
-- Docstrings en cada notebook
-- Comentarios en línea del código
-- Reportes generados (TXT con estadísticas detalladas)
-
----
-
-**Ultima actualización:** 8 de Febrero de 2025  
-**Versión:** 1.0.0 - Listo para tesis doctoral  
-**Autor:** Sistema Analítico Automatizado  
-**Institución:** [Institución del estudiante]
