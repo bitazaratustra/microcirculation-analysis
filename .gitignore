@@ -58,11 +58,11 @@ data/annotations/
 *.png
 
 # Notebooks incompletas
-notebooks/03_annotations_and_visualization.ipynb
+notebooks/03_annotation_and_visualization.ipynb
 notebooks/04_vessel_segmentation_training.ipynb
 notebooks/05_segmented_video_analysis.ipynb
 notebooks/06_feature_extraction_space_time.ipynb
 notebooks/07_microvascular_dynamics_modeling.ipynb
-notebooks/08_clinical_metrics_and_comparision.ipynb
+notebooks/08_clinical_metrics_and_comparison.ipynb
 notebooks/09_results_summary_for_thesis.ipynb
 
